@@ -11,10 +11,7 @@ const post = ref({});
 Action.get(url + "/posts/" + id, (response) => post.value = response.data)
   .then(() => {
     post.value = { ...post.value, "views": parseInt(post.value.views) + 1 }
-    Action.delete(url + "/posts/" + id)
-    .then(() => {
-      Action.post(url + "/posts/", { ...post.value, "id": id});
-    })
+    Action.put(url + "/posts/" + id, { ...post.value, "id": id});
   })
 
 </script>

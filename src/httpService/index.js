@@ -14,8 +14,8 @@ class Actions {
         await axios.post(url, data)
     }
 
-    async patch(url, data) {
-        await axios.patch(url, data)
+    async put(url, data) {
+        await axios.post(url, data)
     }
 
     async delete(url) {
